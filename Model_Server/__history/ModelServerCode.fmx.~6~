@@ -1,0 +1,141 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = Single
+  Caption = 'Model Server'
+  ClientHeight = 389
+  ClientWidth = 535
+  Fill.Kind = Solid
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object RoundRect1: TRoundRect
+    Align = Top
+    Fill.Color = claCadetblue
+    Margins.Left = 150.000000000000000000
+    Margins.Top = 30.000000000000000000
+    Margins.Right = 150.000000000000000000
+    Position.X = 150.000000000000000000
+    Position.Y = 111.000000000000000000
+    Size.Width = 235.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label2: TLabel
+      Align = Center
+      StyledSettings = [Family, Size, Style]
+      HitTest = True
+      Size.Width = 53.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Star/Stop'
+      TabOrder = 0
+    end
+  end
+  object RoundRect2: TRoundRect
+    Align = Top
+    Fill.Color = claCadetblue
+    Margins.Left = 150.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 150.000000000000000000
+    Position.X = 150.000000000000000000
+    Position.Y = 158.000000000000000000
+    Size.Width = 235.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label3: TLabel
+      Align = Center
+      StyledSettings = [Family, Size, Style]
+      HitTest = True
+      Size.Width = 76.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Database'
+      TabOrder = 0
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 30.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Size.Width = 525.000000000000000000
+    Size.Height = 151.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 2
+    TabPosition = PlatformDefault
+    Sizes = (
+      525s
+      125s
+      525s
+      125s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 47.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'State'
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 40.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Log'
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = MostTop
+    Size.Width = 535.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Layout1: TLayout
+      Align = Center
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Size.Width = 476.000000000000000000
+      Size.Height = 79.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label1: TLabel
+        Align = Center
+        StyledSettings = []
+        Size.Width = 476.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.Font.StyleExt = {00020000000000000004000000}
+        TextSettings.FontColor = claCadetblue
+        TextSettings.HorzAlign = Center
+        Text = 'Model Server'
+        TabOrder = 0
+      end
+      object RectAnimation1: TRectAnimation
+        Duration = 0.200000002980232200
+      end
+    end
+  end
+end

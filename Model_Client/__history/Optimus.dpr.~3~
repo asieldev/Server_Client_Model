@@ -1,0 +1,14 @@
+program Optimus;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  AppForm in 'AppForm.pas' {frMain};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  AApplication.CreateForm(TfrMain, frMain);
+  pplication.Run;
+end.

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/03/06 15:59:56.000.644,=C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/11 14:08:39.000.288,=C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/11 14:09:05.000.949,C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Model_Server.dproj</Transaction>
+    <Transaction>2020/03/11 14:14:02.000.435,C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit1.fmx</Transaction>
+    <Transaction>2020/03/11 14:14:02.000.435,C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit1.pas</Transaction>
+    <Transaction>2020/03/11 14:14:04.000.822,C:\Users\asiel\OneDrive\Documentos\Embarcadero\Studio\Projects\Model_Server.dproj=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Model_Server.dproj</Transaction>
+    <Transaction>2020/03/11 14:56:35.000.447,=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit2.pas</Transaction>
+    <Transaction>2020/03/11 14:58:21.000.709,C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit2.dfm=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\DMModelServer.dfm</Transaction>
+    <Transaction>2020/03/11 14:58:21.000.709,C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit2.pas=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\DMModelServer.pas</Transaction>
+    <Transaction>2020/03/11 14:58:51.000.281,C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit1.fmx=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\ModelServerCode.fmx</Transaction>
+    <Transaction>2020/03/11 14:58:51.000.281,C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\Unit1.pas=C:\Users\asiel\OneDrive\Documentos\Gabriel_Pro\Server_Client\Model_Server\ModelServerCode.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,262 @@
+unit AppForm;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ScrollBox,
+  FMX.Memo, FMXTee.Engine, FMXTee.Procs, FMXTee.Chart, FMXTee.Chart.Functions,
+  FMXTee.Series, FMX.Objects, FMX.Layouts, System.ImageList, FMX.ImgList,
+  FMX.Edit, System.Rtti, FMX.Grid.Style, FMX.Grid, Data.DB, ZAbstractRODataset,
+  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection,
+  Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
+  Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
+  FMX.TabControl, System.JSON, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+
+  TfrMain = class(TForm)
+    Rectangle1: TRectangle;
+    Layout1: TLayout;
+    Rectangle2: TRectangle;
+    Layout2: TLayout;
+    Layout3: TLayout;
+    Image2: TImage;
+    Layout4: TLayout;
+    Layout5: TLayout;
+    Layout6: TLayout;
+    Label1: TLabel;
+    Rectangle5: TRectangle;
+    Rectangle7: TRectangle;
+    SpeedButton1: TSpeedButton;
+    ImageList1: TImageList;
+    Image3: TImage;
+    lbStart: TText;
+    Image4: TImage;
+    Text1: TText;
+    SpeedButton2: TSpeedButton;
+    Image5: TImage;
+    Text2: TText;
+    SpeedButton3: TSpeedButton;
+    Text3: TText;
+    Layout9: TLayout;
+    Image6: TImage;
+    Text11: TText;
+    SpeedButton4: TSpeedButton;
+    SaveDialog1: TSaveDialog;
+    Line1: TLine;
+    Grid1: TGrid;
+    ZConnection1: TZConnection;
+    ZQuery1: TZQuery;
+    Layout7: TLayout;
+    Memo1: TMemo;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
+    RoundRect1: TRoundRect;
+    Label2: TLabel;
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    TabItem2: TTabItem;
+    Memo2: TMemo;
+    procedure Image2Click(Sender: TObject);
+    procedure Image2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Image2MouseLeave(Sender: TObject);
+    procedure Image2MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Image2MouseEnter(Sender: TObject);
+    procedure swOptimizationMouseEnter(Sender: TObject);
+    procedure swOptimizationMouseLeave(Sender: TObject);
+    procedure swSelectionMouseEnter(Sender: TObject);
+    procedure swSelectionMouseLeave(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure SaveAsImage(Sender:Tobject);
+    procedure Layout3MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Layout3MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Single);
+    procedure Layout3MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure RoundRect1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+  private
+
+    NSeries : Integer;
+    NGenerations : Integer;
+
+  public
+    CurrentFile : String;
+
+  end;
+
+var
+  frMain: TfrMain;
+     dra : Boolean; //Esta nos sirve para saber cuándo el usuario da click (o toca la pantalla), y cuando lo suelta.
+     poi : TPoint ;
+
+implementation
+
+{$R *.fmx}
+
+
+procedure TfrMain.FormCreate(Sender: TObject);
+begin
+  Memo1.Text := 'Select * from remote_guard_monitoring';
+end;
+
+procedure TfrMain.Image2Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrMain.Image2MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+    TImage(Sender).Opacity:= 0.3;
+end;
+
+procedure TfrMain.Image2MouseEnter(Sender: TObject);
+begin
+   TImage(Sender).Opacity:= 0.3;
+end;
+
+procedure TfrMain.Image2MouseLeave(Sender: TObject);
+begin
+ TImage(Sender).Opacity:= 1;
+end;
+
+procedure TfrMain.Image2MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+ TImage(Sender).Opacity:= 1;
+end;
+
+Procedure TfrMain.Layout3MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+     //En esta parte guardamos las coordenadas en las que el usuario hizo click*/
+    dra := true;
+    poi.x := round(X);
+    poi.y := round(Y);
+end;
+
+procedure TfrMain.Layout3MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Single);
+  var xx,yy: Integer;
+begin
+  //Si dra == true o sea si el usuario hiso click y no lo ha soltado,
+  //calculamos el punto Y (o Top), que el formulario tendrá*/
+    if ( dra = true ) then
+    begin
+        Self.Left := Self.Left + round(X) - round(poi.x);
+        Self.Top := Self.Top + round(Y) - round(poi.y);
+
+    end;
+
+ end;
+
+procedure TfrMain.Layout3MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+if(dra) then
+       dra:=False;
+
+end;
+
+procedure TfrMain.RoundRect1Click(Sender: TObject);
+Var
+//FDQuery : TZQuery;
+field_name,Collumnname,CollumnValue : String;
+I: Integer;
+
+LJSONObject:TJsonObject;
+begin
+  //  FDQuery :=TZQuery.Create(nil);
+    try
+      ZQuery1.Connection := ZConnection1;
+      ZQuery1.SQL.Text := Memo1.Text;
+      ZQuery1.Active := True;
+ //   ZQuery1.BeginBatch;//Don't update external references until EndBatch;
+      ZQuery1.First;
+      LJSONObject:= TJSONObject.Create;
+
+      while (not ZQuery1.EOF) do
+      begin
+        for I := 0 to ZQuery1.FieldDefs.Count-1 do
+            begin
+
+              CollumnName  := ZQuery1.FieldDefs[I].Name;
+              CollumnValue := ZQuery1.FieldByName(CollumnName).AsString;
+              LJSONObject.AddPair(TJSONPair.Create(TJSONString.Create( CollumnName ),TJSONString.Create(CollumnValue)));
+              ZQuery1.Next;
+
+            end;
+
+ //ZQuery1.EndBatch;
+
+       end;
+       finally
+
+         Memo2.Text := LJSonObject.Format;
+
+       end;
+   end;
+
+Procedure TfrMain.SaveAsImage(Sender: Tobject);
+begin
+  if SaveDialog1.Execute then { get a file name }
+  begin
+
+    CurrentFile := SaveDialog1.FileName; { save the user-specified name }
+    SpeedButton4Click(Sender); { then save normally }
+    ShowMessage('Image Saved: '+ CurrentFile+'.bmp');
+    ShowMessage('Connect to Database');
+
+  end;
+
+
+end;
+
+procedure TfrMain.SpeedButton4Click(Sender: TObject);
+var
+   Timg: Timage;
+begin
+  Timg:= TImage.Create(Self);
+  if CurrentFile <> '' then
+  begin
+
+  end
+    else
+      SaveAsImage(Sender);
+
+end;
+
+procedure TfrMain.swOptimizationMouseEnter(Sender: TObject);
+begin
+     TSwitch(Sender).ShowHint:= True;
+end;
+
+procedure TfrMain.swOptimizationMouseLeave(Sender: TObject);
+begin
+ TSwitch(Sender).ShowHint:= False;
+end;
+
+procedure TfrMain.swSelectionMouseEnter(Sender: TObject);
+begin
+    TSwitch(Sender).ShowHint:= True;
+end;
+
+procedure TfrMain.swSelectionMouseLeave(Sender: TObject);
+begin
+  TSwitch(Sender).ShowHint:= False;
+end;
+
+end.
+
+

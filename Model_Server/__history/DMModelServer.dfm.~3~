@@ -1,0 +1,5 @@
+object DMServer: TDMServer
+  OldCreateOrder = False
+  Height = 348
+  Width = 531
+end

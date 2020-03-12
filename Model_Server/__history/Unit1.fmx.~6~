@@ -1,0 +1,89 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = Single
+  Caption = 'Model Server'
+  ClientHeight = 352
+  ClientWidth = 572
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 552.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+    end
+    object Label1: TLabel
+      Align = Left
+      StyledSettings = []
+      Position.X = 50.000000000000000000
+      Size.Width = 191.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00020000000000000004000000}
+      TextSettings.FontColor = claCadetblue
+      TextSettings.HorzAlign = Center
+      Text = 'Model Server'
+      TabOrder = 1
+    end
+  end
+  object RoundRect1: TRoundRect
+    Fill.Color = claCadetblue
+    Position.X = 136.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label2: TLabel
+      Align = Center
+      StyledSettings = [Family, Size, Style]
+      HitTest = True
+      Size.Width = 53.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Star'
+      TabOrder = 0
+    end
+  end
+  object RoundRect2: TRoundRect
+    Fill.Color = claCadetblue
+    Position.X = 136.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label3: TLabel
+      Align = Center
+      StyledSettings = [Family, Size, Style]
+      HitTest = True
+      Size.Width = 53.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Stop'
+      TabOrder = 0
+    end
+  end
+end
